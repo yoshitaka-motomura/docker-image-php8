@@ -15,5 +15,6 @@ RUN apk add --no-cache --virtual build-essentials \
     apk del build-essentials && rm -rf /usr/src/php*
 
 COPY ./config/php/php.ini /usr/local/etc/php/php.ini
+COPY ./config/php/upload.ini /usr/local/etc/php/conf.d/upload.ini
 
 COPY --from=composer /usr/bin/composer /usr/bin/composer
